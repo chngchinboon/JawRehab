@@ -1,0 +1,40 @@
+<MyLabel@Label>:
+    color: 0, 0, .1, 1
+    pos_hint: {'x':.1}
+    size_hint_x: .1
+
+<MyProgressBar@ProgressBar>:
+    min: 0
+    max: 100
+    pos_hint: {'x':.25}
+    size_hint_x: .6
+
+<blegui>:
+    orientation: 'vertical'
+    canvas:
+        Color:
+            rgb: .9,.9,.9
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    RelativeLayout:
+        Button:
+            text: 'Start!'
+            on_release: root.connectBle()
+
+    RelativeLayout:
+        MyLabel:
+            text: 'S1 weight'
+        MyProgressBar:
+            id: pb1
+    RelativeLayout:
+        MyLabel:
+            text: 'S2 weight'
+        MyProgressBar:
+            id: pb2
+    RelativeLayout:
+        MyLabel:
+            text: 'S3 weight'
+        MyProgressBar:
+            id: pb3
