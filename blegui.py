@@ -1,5 +1,6 @@
 from kivy.uix.boxlayout import BoxLayout
 from kivy.app import App
+from kivy.lang import Builder
 from kivy.clock import Clock
 from jnius import autoclass
 
@@ -60,7 +61,7 @@ class blegui(BoxLayout):
 
 class bleguiApp(App):
     def build(self):
-        # self.recv_stream, self.send_stream = get_socket_stream('linvor')
+        self.recv_stream, self.send_stream = get_socket_stream('linvor')
         self.title = "Rehab"
         return blegui()
 
